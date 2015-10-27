@@ -384,7 +384,7 @@ FusionPositionSensorVRDevice.prototype.onDeviceMotionChange_ = function(deviceMo
     return;
   }
   this.accelerometer.set(-accGravity.x, -accGravity.y, -accGravity.z);
-  this.gyroscope.set(rotRate.alpha, rotRate.beta, rotRate.gamma);
+  this.gyroscope.set(rotRate.alpha/50000, rotRate.beta/50000, rotRate.gamma/50000);
 
   // In iOS, rotationRate is reported in degrees, so we first convert to
   // radians.
@@ -3098,7 +3098,7 @@ module.exports = TouchPanner;
 var Util = window.Util || {};
 
 Util.MIN_TIMESTEP = 0.001;
-Util.MAX_TIMESTEP = 1;
+Util.MAX_TIMESTEP = 20;
 
 Util.clamp = function(value, min, max) {
   return Math.min(Math.max(min, value), max);
