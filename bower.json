@@ -23,6 +23,6 @@
   ],
   "dependencies": {
     "threejs": "*",
-    "webvr-polyfill": "*"
+    "webvr-polyfill": "https://github.com/caseyyee/webvr-polyfill.git"
   }
 }
